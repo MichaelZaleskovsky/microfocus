@@ -26,8 +26,8 @@ public class TaskShedulerImpl implements TaskScheduler {
         }
 
         try {
-            MicroFocusApplication.taskQueue.put(task);
             MicroFocusApplication.resultMap.put(task.getId(), new ResultImpl());
+            MicroFocusApplication.taskQueue.put(task);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
